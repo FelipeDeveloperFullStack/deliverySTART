@@ -1,17 +1,12 @@
 import React from 'react';
+/** Types */
+import IPropsButtonCustom from './Types/IPropsButtonCustom'
 
-interface IProps {
-  classNameTextButton: string,
-  classNameButton: string,
-  nameButton: string,
-  icon: any,
-  styleIcon?: any
-}
 
-const Button: React.FC<IProps> = (props: IProps) => {
+const Button: React.FC<IPropsButtonCustom> = (props: IPropsButtonCustom) => {
   return (
     <>
-      <button type='button' className={props.classNameButton} style={{ width: '200px' }}>
+      <button type='button' className={props.classNameButton} style={{ width: '200px' }} onClick={props.onClick}>
         <div style={props.styleIcon}>{props.icon}</div>
         <div className={props.classNameTextButton} style={{ paddingTop: '4px' }}>{props.nameButton}</div>
         <div></div>

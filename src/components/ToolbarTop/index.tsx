@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 import Button from '../Button/ButtonCustom'
 import UseStyles from './UseStyles'
+import DialogComercio from '../../comercio/cadastro/index'
 
 const AppBarStyled = styled(AppBar)({
   background: '#444444',
@@ -17,6 +18,7 @@ const AppBarStyled = styled(AppBar)({
 
 const ToolBar: React.FC<any> = () => {
   const classes = UseStyles();
+  const [isShowDialogComercio, setIsShowDialogComercio] = React.useState(false)
 
   return (
     <div className={classes.root}>
@@ -29,7 +31,8 @@ const ToolBar: React.FC<any> = () => {
                 classNameTextButton='pl-1 tracking-tight text-sm pt-0.5 font-bold'
                 nameButton='MINHA LOJA'
                 styleIcon={{ position: 'relative', left: '15px' }}
-                icon={<StorefrontIcon />}>
+                icon={<StorefrontIcon />}
+                onClick={() => setIsShowDialogComercio(true)}>
               </Button>
               <Button classNameButton='flex justify-evenly p-2 rounded-lg text-current cursor-pointer bg-zinc-500/50 hover:bg-zinc-500/75'
                 classNameTextButton='pl-1 tracking-tight text-sm pt-0.5'
@@ -46,6 +49,9 @@ const ToolBar: React.FC<any> = () => {
           </div>
         </Toolbar>
       </AppBarStyled>
+
+      {isShowDialogComercio && <DialogComercio isOpen={isShowDialogComercio} setIsOpen={setIsShowDialogComercio}/>}
+
     </div>
   );
 }
