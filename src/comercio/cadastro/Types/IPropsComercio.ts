@@ -1,5 +1,5 @@
 export default interface IPropsComercio {
-  onClick?: any,
+  onClick?: () => void,
   isOpen: boolean,
   setIsOpen: any
 }

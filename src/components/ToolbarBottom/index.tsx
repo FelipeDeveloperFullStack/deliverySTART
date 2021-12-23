@@ -8,16 +8,22 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import AllInboxIcon from '@material-ui/icons/AllInbox';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-
+/** Styles */
+import { styled } from '@material-ui/core/styles'
 import Button from '../Button/ButtonCustom'
 import UseStyles from './UseStyles'
+
+const AppBarStyled = styled(AppBar)({
+    background: '#EEEEEE',
+    color: "#000"
+})
 
 const ToolBar: React.FC<any> = () => {
   const classes = UseStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBarStyled position="fixed" className={classes.appBar}>
         <div className='flex justify-between'>
           <Button nameButton='PONTO DE VENDA'
                   classNameTextButton='pl-1 tracking-tight text-sm pt-0.5'
@@ -61,7 +67,7 @@ const ToolBar: React.FC<any> = () => {
                   icon={<PeopleAltIcon />}>
           </Button>
         </div>
-      </AppBar>
+      </AppBarStyled>
     </div>
   );
 }
