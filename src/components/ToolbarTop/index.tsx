@@ -29,7 +29,7 @@ const ToolBar: React.FC<any> = () => {
             <div className='flex justify-between'>
               <Button classNameButton='flex justify-evenly p-2 text-current cursor-pointer'
                 classNameTextButton='pl-1 tracking-tight text-sm pt-0.5 font-bold'
-                nameButton='IGREJA'
+                nameButton='IGREJA DA CONGREGAÇÃO CRISTÃ DO BRASIL'
                 styleIcon={{ position: 'relative', left: '15px' }}
                 icon={<StorefrontIcon />}
                 onClick={() => setIsShowDialogComercio(true)}>
